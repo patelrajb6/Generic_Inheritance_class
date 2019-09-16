@@ -1,39 +1,37 @@
 
-public abstract class GenericList<T> {				// the base singley Linked list 
+public abstract class GenericList<T> {				// the base singly Linked list 
 	Node head;										// reference to the first node in the list
 	int length;										// saving the length of the list	
 	
-	public void add (T data)						// adding the node
+	public abstract void add (T data);						// adding the node
+	public T delete()							//deleting the node
 	{
-		Node NewNode= new Node();				// creating new node
-		NewNode.data=data;
-		NewNode.next=null;
+		T DeletedVal;
+		DeletedVal=this.head.data;				//storing the data of the first node before deleting
 		
-		if(this.head==null)
-		{
-			this.head=NewNode;
-		}
-		else
-		{
-			while(head!=null)
-			{
-				head=head.next;
-			}
-		}
-	}
-	public void delete()							//deleting the node
-	{
+		this.head=this.head.next;				//moving the reference to the second node in the list
 		
+		return DeletedVal;						
 	}
 	public void print()								// printing the elements of the list one element per line
 	{
+		Node iter= this.head;
+		while(iter!=null)
+		{
+			System.out.println(iter.data);
+			iter=iter.next;
+		}
 		
 	}
-	private class Node								// Node class which is the single unit of the list
+	public class Node								// Node class which is the single unit of the list
 	{
 		T data;										// where data is stored
 		Node next;									// the address of the next element is stored.
-		
+		Node(T val)
+		{
+			this.data=val;
+			this.next=null;
+		}
 	}
 
 }
