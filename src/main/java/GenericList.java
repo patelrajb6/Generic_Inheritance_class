@@ -4,6 +4,7 @@ public abstract class GenericList<T> {				// the base singly Linked list
 	int length=0;										// saving the length of the list	
 	
 	public abstract void add (T data);						// adding the node
+	
 	public T delete()							//deleting the node
 	{
 		T DeletedVal;
