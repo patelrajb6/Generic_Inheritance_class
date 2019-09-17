@@ -10,6 +10,7 @@ public class GLProject {
 		//n1.print();
 		n1.enqueue(6);
 		n1.enqueue(8);
+		System.out.println(n1.length);
 		n1.dequeue();
 		//n1.print();
 		n2.push(5);
