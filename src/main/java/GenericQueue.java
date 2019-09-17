@@ -8,7 +8,7 @@ public class GenericQueue<I> extends GenericList<I> {				//class inherited from 
 	}
 	public void add(I data) {										//the implementation of the abstract method
 		Node NewNode=new Node(data);								//New Node	
-		Node temp= new Node(null);									// temp Node used as pointer
+		Node temp=head;									// temp Node used as pointer
 		if(this.head==null)											//if the queue is empty
 		{
 			this.head=NewNode;

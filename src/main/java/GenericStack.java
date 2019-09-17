@@ -1,7 +1,10 @@
 
 public class GenericStack<E> extends GenericList<E>{
 
-	@Override
+	GenericStack(E data)
+	{
+		this.add(data);
+	}
 	public void add(E data) {
 		Node NewNode= new Node(data);
 		if(this.head==null)											  //if the queue is empty
