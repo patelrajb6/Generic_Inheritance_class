@@ -4,6 +4,7 @@ public class GenericQueue<I> extends GenericList<I> {				//class inherited from 
 
 	GenericQueue(I data)											//constructor
 	{
+		
 		this.add(data);
 	}
 	public void add(I data) {										//the implementation of the abstract method
@@ -21,7 +22,7 @@ public class GenericQueue<I> extends GenericList<I> {				//class inherited from 
 			}
 			temp.next=NewNode;										//adding the node
 		}
-		this.length=length+1;									
+		this.setlength(this.getlength()+1);									
 	}
 	public void enqueue(I data)										//adding the node
 	{
@@ -33,5 +34,7 @@ public class GenericQueue<I> extends GenericList<I> {				//class inherited from 
 		I deletedVal=this.delete();
 		return deletedVal;
 	}
+	
+	
 	
 }

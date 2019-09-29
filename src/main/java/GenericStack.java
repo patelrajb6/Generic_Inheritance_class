@@ -1,8 +1,10 @@
 
-public class GenericStack<E> extends GenericList<E>{
 
+public class GenericStack<E> extends GenericList<E> {
+	
 	GenericStack(E data)												//Constructor
 	{
+		
 		this.add(data);
 	}
 	public void add(E data) {
@@ -16,7 +18,7 @@ public class GenericStack<E> extends GenericList<E>{
 			NewNode.next=this.head;										
 			head=NewNode;
 		}
-		this.length=this.length+1;										//increase the length
+		this.setlength(this.getlength()+1);											//increase the length
 	}
 	public void push(E data)											//push onto the stack
 	{
@@ -27,5 +29,7 @@ public class GenericStack<E> extends GenericList<E>{
 		E PoppedVal= this.delete();
 		return PoppedVal;
 	}
+	
+	
 
 }

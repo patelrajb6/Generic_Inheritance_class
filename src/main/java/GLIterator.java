@@ -1,20 +1,40 @@
 import java.util.Iterator;
 
-public class GLIterator<P> implements CreateIterator<P>{
+public class GLIterator<P> implements Iterator<P>{
 
-	@Override
-	public Iterator<P> createIterator() {
-		// TODO Auto-generated method stub
-		return null;
+	
+	public GenericList<P>.Node tnode;				//walker to walk through list 
+	GLIterator(GenericList<P> list)
+	{
+		tnode=list.head;								
 	}
 	
-	public void hasNext()
-	{
+	public  boolean hasNext() {				//overriding the actual behaviour of the list
+		
+		if(tnode!=null)						//checking if the node is null or not
+			return true;
+		else
+			return false;
 		
 	}
-	public void  next()
-	{
+
+	
+	public P next() {							//return the next element
+		P data;
+		if (!this.hasNext())
+			return null;
+       data=tnode.data;
+       tnode=tnode.next;
+       return data;
 		
 	}
+
+	
+	
+	
+	
+	
+	
+	
 
 }
