@@ -13,13 +13,13 @@ public class GLProject {
 		n1.enqueue(6);
 		n1.enqueue(8);
 		
-		n1.dequeue();
-		n1.dequeue();
+		System.out.println(n1.dequeue());
+		//n1.dequeue();
 		//n1.print();
 		n2.push(5);
 		n2.push(6);
 		n2.push(8);
-		n1.print();
+		//n1.print();
 		Iterator<Integer> iter= n1.createIterator();
 		while(iter.hasNext())
 			System.out.println(iter.next());

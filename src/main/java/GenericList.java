@@ -13,6 +13,8 @@ public abstract class GenericList<T>  implements CreateIterator<T>{				// the ba
 	
 	public int getlength()							//method to get length
 	{
+		if(this.length<0)							//if trying to pop a empty stack or queue
+			return 0;
 		return this.length;
 	}
 	
@@ -20,7 +22,10 @@ public abstract class GenericList<T>  implements CreateIterator<T>{				// the ba
 	{
 		T DeletedVal;
 		DeletedVal=this.head.data;				//storing the data of the first node before deleting
-		
+		if(this.head==null)						//if the stack or queue ends up being empty
+		{
+			return null;
+		}
 		this.head=this.head.next;				//moving the reference to the second node in the list
 		
 		this.length=this.length-1;
